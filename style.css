@@ -1,0 +1,294 @@
+/* Estilo Aesthetic Stitch para toda la página */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Comic Sans MS', cursive;
+}
+
+body {
+  background: linear-gradient(to bottom, #ffe8f1, #e6f0ff);
+  color: #4c2b4c;
+  scroll-behavior: smooth;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Encabezado */
+.header {
+  background-color: #ffd6e8;
+  color: #4b2c5e;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 3px solid #c48bd3;
+  flex-wrap: wrap;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 60px;
+  margin-right: 12px;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #8c4abf;
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #7d3ea5;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.nav a:hover {
+  color: #ff77a9;
+  text-decoration: underline;
+}
+
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 60px 20px;
+  background-color: #ffeaf7;
+  background-image: url('https://i.pinimg.com/originals/b5/4e/03/b54e03d55fcb71c2be14455d07a9cf56.png');
+  background-repeat: no-repeat;
+  background-position: center right;
+  background-size: contain;
+}
+
+.hero h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+  color: #b549a4;
+}
+
+.hero p {
+  font-size: 18px;
+  max-width: 600px;
+  margin: 0 auto;
+  color: #663f59;
+}
+
+/* Menú */
+.menu {
+  padding: 40px 20px;
+  text-align: center;
+  background-color: #fff0f7;
+}
+
+.menu h3 {
+  font-size: 28px;
+  margin-bottom: 30px;
+  color: #b549a4;
+}
+
+.menu-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.item {
+  background-color: #fff;
+  border: 2px dashed #d69acb;
+  border-radius: 20px;
+  padding: 20px;
+  width: 250px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+}
+
+.item:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 15px #f3bce6;
+}
+
+.item h4 {
+  font-size: 20px;
+  color: #7d3ea5;
+  margin-bottom: 5px;
+}
+
+.item p {
+  font-size: 14px;
+  color: #85557b;
+  margin-bottom: 10px;
+}
+
+.item span {
+  font-weight: bold;
+  color: #ba468f;
+  font-size: 16px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.item button {
+  background-color: #ff99cc;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.item button:hover {
+  background-color: #ff77a9;
+}
+
+/* Carrito */
+.carrito {
+  padding: 40px 20px;
+  text-align: center;
+  background-color: #fce4ec;
+}
+
+#carrito-lista {
+  list-style: none;
+  margin-bottom: 10px;
+  padding: 0;
+}
+
+#carrito-lista li {
+  margin: 5px 0;
+  color: #663f59;
+}
+
+.carrito button {
+  background-color: #ce73a1;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.carrito button:hover {
+  background-color: #b34789;
+}
+
+/* Pago */
+.pago {
+  background-color: #ffe8f1;
+  color: #663f59;
+  font-family: 'Comic Sans MS', cursive;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.pago h3 {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.pago p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.pago-icons {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.pago-icons img {
+  width: 48px;
+  height: 48px;
+}
+
+/* Contacto */
+.contacto {
+  padding: 40px 20px;
+  text-align: center;
+  background-color: #ffeaf7;
+}
+
+.contacto h3 {
+  color: #8c4abf;
+}
+
+.contacto p {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #663f59;
+}
+
+/* Footer */
+.footer {
+  background-color: #caa5e2;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 30px;
+  font-weight: bold;
+}
+
+/* Responsive para celulares */
+@media (max-width: 600px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .menu-items {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .item {
+    width: 90%;
+  }
+
+  .hero {
+    padding: 40px 10px;
+    background-position: center top;
+    background-size: 300px;
+  }
+}
+
+/* Responsive para tablets */
+@media (min-width: 601px) and (max-width: 900px) {
+  .menu-items {
+    justify-content: space-around;
+  }
+
+  .item {
+    width: 45%;
+  }
+}
