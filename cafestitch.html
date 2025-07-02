@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Café Stitch</title>
+  <style>
+    /* Todo el CSS incluido aquí (estilo aesthetic Stitch) */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Comic Sans MS', cursive;
+    }
+
+    body {
+      background: linear-gradient(to bottom, #ffe8f1, #e6f0ff);
+      color: #4c2b4c;
+      scroll-behavior: smooth;
+    }
+
+    .header {
+      background-color: #ffd6e8;
+      color: #4b2c5e;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 3px solid #c48bd3;
+      flex-wrap: wrap;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo {
+      width: 60px;
+      margin-right: 12px;
+    }
+
+    .title {
+      font-size: 28px;
+      font-weight: bold;
+      color: #8c4abf;
+    }
+
+    .nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .nav a {
+      text-decoration: none;
+      color: #7d3ea5;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .nav a:hover {
+      color: #ff77a9;
+      text-decoration: underline;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 60px 20px;
+      background-color: #ffeaf7;
+      background-image: url('https://i.pinimg.com/originals/b5/4e/03/b54e03d55fcb71c2be14455d07a9cf56.png');
+      background-repeat: no-repeat;
+      background-position: center right;
+      background-size: contain;
+    }
+
+    .hero h2 {
+      font-size: 36px;
+      margin-bottom: 10px;
+      color: #b549a4;
+    }
+
+    .hero p {
+      font-size: 18px;
+      max-width: 600px;
+      margin: 0 auto;
+      color: #663f59;
+    }
+
+    .menu {
+      padding: 40px 20px;
+      text-align: center;
+      background-color: #fff0f7;
+    }
+
+    .menu h3 {
+      font-size: 28px;
+      margin-bottom: 30px;
+      color: #b549a4;
+    }
+
+    .menu-items {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .item {
+      background-color: #fff;
+      border: 2px dashed #d69acb;
+      border-radius: 20px;
+      padding: 20px;
+      width: 250px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: 0.3s;
+    }
+
+    .item:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 15px #f3bce6;
+    }
+
+    .item h4 {
+      font-size: 20px;
+      color: #7d3ea5;
+      margin-bottom: 5px;
+    }
+
+    .item p {
+      font-size: 14px;
+      color: #85557b;
+      margin-bottom: 10px;
+    }
+
+    .item span {
+      font-weight: bold;
+      color: #ba468f;
+      font-size: 16px;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .item button {
+      background-color: #ff99cc;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .item button:hover {
+      background-color: #ff77a9;
+    }
+
+    .carrito {
+      padding: 40px 20px;
+      text-align: center;
+      background-color: #fce4ec;
+    }
+
+    #carrito-lista {
+      list-style: none;
+      margin-bottom: 10px;
+      padding: 0;
+    }
+
+    #carrito-lista li {
+      margin: 5px 0;
+      color: #663f59;
+    }
+
+    .carrito button {
+      background-color: #ce73a1;
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .carrito button:hover {
+      background-color: #b34789;
+    }
+
+    .contacto {
+      padding: 40px 20px;
+      text-align: center;
+      background-color: #ffeaf7;
+    }
+
+    .contacto h3 {
+      color: #8c4abf;
+    }
+
+    .contacto p {
+      font-size: 16px;
+      margin-bottom: 10px;
+      color: #663f59;
+    }
+
+    .footer {
+      background-color: #caa5e2;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 30px;
+      font-weight: bold;
+    }
+
+    @media (max-width: 600px) {
+      .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      .nav ul {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .menu-items {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .item {
+        width: 90%;
+      }
+
+      .hero {
+        padding: 40px 10px;
+        background-position: center top;
+        background-size: 300px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="logo-container">
+      <img src="https://i.pinimg.com/originals/f0/c8/cf/f0c8cf2656a346f96ac768f243f35403.png" alt="Logo Café Stitch" class="logo">
+      <h1 class="title">Café Stitch</h1>
+    </div>
+    <nav class="nav">
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#menu">Menú</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+        <li><a href="#carrito">Carrito (<span id="cart-count">0</span>)</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="inicio" class="hero">
+    <h2>Disfruta el sabor más tierno del universo</h2>
+    <p>Bienvenido a Café Stitch, donde la ternura se sirve caliente ☕💙</p>
+  </section>
+
+  <section id="menu" class="menu">
+    <h3>🌸 Menú del Día</h3>
+    <div class="menu-items">
+      <div class="item">
+        <h4>Café Americano</h4>
+        <p>Clásico, suave y reconfortante.</p>
+        <span>$2.00</span>
+        <button onclick="agregarAlCarrito('Café Americano', 2.00)">Agregar</button>
+      </div>
+      <div class="item">
+        <h4>Latte con Leche de Avena</h4>
+        <p>Suave, cremoso y sin lactosa.</p>
+        <span>$3.50</span>
+        <button onclick="agregarAlCarrito('Latte con Leche de Avena', 3.50)">Agregar</button>
+      </div>
+      <div class="item">
+        <h4>Pan de Banana</h4>
+        <p>Recién horneado y dulce.</p>
+        <span>$1.50</span>
+        <button onclick="agregarAlCarrito('Pan de Banana', 1.50)">Agregar</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="carrito" class="carrito">
+    <h3>🛒 Tu Carrito</h3>
+    <ul id="carrito-lista"></ul>
+    <p id="total">Total: $0.00</p>
+    <button onclick="ordenar()">Ordenar</button>
+  </section>
+
+  <section id="contacto" class="contacto">
+    <h3>📍 Contáctanos</h3>
+    <p>Dirección: Calle Ohana #626, Ciudad Azul</p>
+    <p>Teléfono: (503) 6262-6262</p>
+    <p>Email: aloha@cafestitch.com</p>
+    <p>Horario: Lunes a Domingo, 7:00 a.m. - 9:00 p.m.</p>
+  </section>
+
+  <footer class="footer">
+    © 2025 Café Stitch | Todo con amor y café 💙
+  </footer>
+
+  <script>
+    let carrito = [];
+
+    function agregarAlCarrito(producto, precio) {
+      carrito.push({ producto: producto, precio: precio });
+      actualizarCarrito();
+    }
+
+    function actualizarCarrito() {
+      const lista = document.getElementById("carrito-lista");
+      const totalSpan = document.getElementById("total");
+      const contador = document.getElementById("cart-count");
+
+      lista.innerHTML = "";
+      let total = 0;
+
+      carrito.forEach(function(item) {
+        total += item.precio;
+        const li = document.createElement("li");
+        li.textContent = item.producto + " - $" + item.precio.toFixed(2);
+        lista.appendChild(li);
+      });
+
+      totalSpan.textContent = "Total: $" + total.toFixed(2);
+      contador.textContent = carrito.length;
+    }
+
+    function ordenar() {
+      if (carrito.length === 0) {
+        alert("Tu carrito está vacío.");
+        return;
+      }
+
+      let mensaje = "Has ordenado:\n";
+      carrito.forEach(function(item) {
+        mensaje += "- " + item.producto + " ($" + item.precio.toFixed(2) + ")\n";
+      });
+
+      let total = carrito.reduce(function(suma, item) {
+        return suma + item.precio;
+      }, 0);
+
+      mensaje += "\nTotal: $" + total.toFixed(2);
+      alert(mensaje);
+
+      carrito = [];
+      actualizarCarrito();
+    }
+  </script>
+</body>
+</html>
