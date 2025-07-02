@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Café Stitch</title>
+  <link rel="stylesheet" href="../style/style.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <header class="header">
+    <div class="logo-container">
+      <img src="https://i.pinimg.com/originals/f0/c8/cf/f0c8cf2656a346f96ac768f243f35403.png" alt="Logo Café Stitch" class="logo">
+      <h1 class="title">Café Stitch</h1>
+    </div>
+    <nav class="nav">
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#menu">Menú</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+        <li><a href="#carrito">Carrito (<span id="cart-count">0</span>)</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="inicio" class="hero">
+    <h2>Disfruta el sabor más tierno del universo</h2>
+    <p>Bienvenido a Café Stitch, donde la ternura se sirve caliente ☕💙</p>
+  </section>
+
+  <section id="menu" class="menu">
+    <h3>🌸 Menú del Día</h3>
+    <div class="menu-items">
+      <div class="item">
+        <h4>Café Americano</h4>
+        <p>Clásico, suave y reconfortante.</p>
+        <span>$2.00</span>
+        <button onclick="agregarAlCarrito('Café Americano', 2.00)">Agregar</button>
+      </div>
+      <div class="item">
+        <h4>Latte con Leche de Avena</h4>
+        <p>Suave, cremoso y sin lactosa.</p>
+        <span>$3.50</span>
+        <button onclick="agregarAlCarrito('Latte con Leche de Avena', 3.50)">Agregar</button>
+      </div>
+      <div class="item">
+        <h4>Croissant de Mantequilla</h4>
+        <p>Perfecto para acompañar tu café.</p>
+        <span>$1.50</span>
+        <button onclick="agregarAlCarrito('Croissant de Mantequilla', 1.50)">Agregar</button>
+      </div>
+      <div class="item">
+        <h4>Pan de Banana</h4>
+        <p>Suave, dulce y recién horneado.</p>
+        <span>$2.00</span>
+        <button onclick="agregarAlCarrito('Pan de Banana', 2.00)">Agregar</button>
+      </div>
+      <div class="item">
+        <h4>Combo Desayuno</h4>
+        <p>1 Café + 1 pan a elección.</p>
+        <span>$4.00</span>
+        <button onclick="agregarAlCarrito('Combo Desayuno', 4.00)">Agregar</button>
+      </div>
+      <div class="item">
+        <h4>Promoción Tarde Dulce</h4>
+        <p>Capuccino + Brownie casero.</p>
+        <span>$3.80</span>
+        <button onclick="agregarAlCarrito('Promoción Tarde Dulce', 3.80)">Agregar</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="carrito" class="carrito">
+    <h3>🛒 Tu Carrito</h3>
+    <ul id="carrito-lista"></ul>
+    <p id="total">Total: $0.00</p>
+    <button onclick="ordenar()">Ordenar</button>
+  </section>
+
+  <section id="pago" class="pago">
+    <h3>💳 Métodos de Pago</h3>
+    <p>¡Aceptamos todos los métodos de pago modernos para tu comodidad!</p>
+    <div class="pago-icons">
+      <img src="https://img.icons8.com/color/48/000000/visa.png" alt="Visa">
+      <img src="https://img.icons8.com/color/48/000000/mastercard.png" alt="Mastercard">
+      <img src="https://img.icons8.com/color/48/000000/amex.png" alt="American Express">
+      <img src="https://img.icons8.com/color/48/000000/paypal.png" alt="PayPal">
+      <img src="https://img.icons8.com/color/48/000000/apple-pay.png" alt="Apple Pay">
+      <img src="https://img.icons8.com/color/48/000000/google-pay-india.png" alt="Google Pay">
+      <img src="https://img.icons8.com/color/48/000000/samsung-pay.png" alt="Samsung Pay">
+    </div>
+    <div style="margin-top: 30px;">
+      <img src="https://i.pinimg.com/originals/f0/c8/cf/f0c8cf2656a346f96ac768f243f35403.png" alt="Stitch tomando café" style="width: 120px;">
+      <h4 style="margin-top: 10px; font-size: 20px; color: #8c406e;">Café Stitch</h4>
+    </div>
+  </section>
+
+  <section id="contacto" class="contacto">
+    <h3>📍 Contáctanos</h3>
+    <p>Dirección: Calle Ohana #626, Ciudad Azul</p>
+    <p>Teléfono: (503) 6262-6262</p>
+    <p>Email: aloha@cafestitch.com</p>
+    <p>Horario: Lunes a Domingo, 7:00 a.m. - 9:00 p.m.</p>
+  </section>
+
+  <footer class="footer">
+    © 2025 Café Stitch | Todo con amor y café 💙
+  </footer>
+</body>
+</html>
